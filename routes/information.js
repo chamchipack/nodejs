@@ -1,11 +1,11 @@
 const express = require('express')
-const Infomations = require('../schema/infomation')
+const Informations = require('../schema/information')
 const router = express.Router()
 const moment = require('moment')
 
 router.get('/infos', async (req, res) => {
     try {
-        const result = await Infomations.find()
+        const result = await Informations.find()
         res.status(200).json({ result })
     } catch(e) {
         console.log('infos get error', e)

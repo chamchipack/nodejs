@@ -8,7 +8,7 @@ connect()
 // router call
 const MembersRouter = require('./routes/members')
 const PaymentsRouter = require('./routes/payments')
-const InfoRouter = require('./routes/infomation')
+const InfoRouter = require('./routes/information')
 
 
 // middleware
