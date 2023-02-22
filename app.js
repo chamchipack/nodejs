@@ -19,6 +19,10 @@ app.use(express.urlencoded({ extended: false }))
 // router connect
 app.use('/api', [MembersRouter, PaymentsRouter, InfoRouter])
 
+app.get('/', (req, res) => {
+    res.send('anything')
+})
+
 app.listen(3000, (req, res) => {
     console.log("3000 server on")
 })
