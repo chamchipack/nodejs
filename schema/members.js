@@ -30,6 +30,18 @@ const membersSchema = new mongoose.Schema({
             status: {
                 type: Boolean
             },
+            paymentDate: {
+                type: String
+            },
+            classTime: {
+                type: Array // [{ day: 'Mon', time: '19' }]
+            },
+            position: {
+                type: String // enums
+            },
+            timePerWeek: {
+                type: String
+            },
             
 
             // paymentDate: {
