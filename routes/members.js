@@ -6,7 +6,7 @@ const router = express.Router()
 const schemaKeys = require('../store/status')
 const moment = require('moment')
 
-const exceptions = ['classTime', 'position', 'timePerWeek', 'paymentDate']
+const exceptions = ['classTime', 'position', 'timePerWeek', 'paymentDate', 'payment']
 
 router.post('/members', async (req, res) => {
     const currentTime = moment().format('YYYY-MM-DD HH:mm:ss')
@@ -23,13 +23,14 @@ router.post('/members', async (req, res) => {
         const memberResult = Object.assign(...withoutPayment)
         const exception = Object.assign(...exceptionArray)
         const paymentDate = { paymentDate: exception['paymentDate']}
+        const payment = { payment: exception['payment']}
 
         
         let result = await Members.create({ 'properties': memberResult, 'createdAt': currentTime })
 
         res.status(201).json({ result })
         const { _id: memberId } = result
-        let payResult = await Payments.create({ memberId, 'properties': { ...paymentDate }, 'createdAt': currentTime})
+        let payResult = await Payments.create({ memberId, 'properties': { ...paymentDate, ...payment }, 'createdAt': currentTime})
 
         const classTime = { classTime: exception['classTime']}
         const position = { position: exception['position']}

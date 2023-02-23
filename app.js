@@ -1,6 +1,7 @@
 const express = require('express')
 const connect = require('./schema/index')
 const app = require('express')()
+const morgan = require('morgan')
 
 // mongodb
 connect()
@@ -15,6 +16,7 @@ const InfoRouter = require('./routes/information')
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(express.urlencoded({ extended: false }))
+app.use(morgan('combined'))
 
 // router connect
 app.use('/api', [MembersRouter, PaymentsRouter, InfoRouter])

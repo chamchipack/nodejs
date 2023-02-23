@@ -11,7 +11,8 @@ const schemaKey = () => {
             status: '등록여부'
         },
         payment: {
-            paymentDate: '수강료'
+            paymentDate: '결제일',
+            payment: '수강료'
         },
         information: {
             classTime: '수강일', 

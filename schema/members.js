@@ -30,6 +30,9 @@ const membersSchema = new mongoose.Schema({
             status: {
                 type: Boolean
             },
+            payment: {
+                type: String
+            },
             paymentDate: {
                 type: String
             },

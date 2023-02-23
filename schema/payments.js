@@ -9,9 +9,13 @@ const paymentsSchema = new mongoose.Schema({
         },
         properties: {
             type: Object,
+
             paymentDate: {
                 type: String
             },
+            payment: {
+                type: String
+            }
             // classTime: {
             //     type: Array // [{ day: 'Mon', time: '19' }]
             // },
