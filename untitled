@@ -1,0 +1,34 @@
+{
+    items: [
+        {
+            name: 'devices',
+            createdAt: '',
+            schema: [
+                {
+                    name: 'device1',
+                    gbn: 'cctv'
+                },
+                {
+                    name: 'device2',
+                    gbn: 'sensor'
+                },
+                {
+                    name: 'device3',
+                    gbn: 'sensor'
+                }
+            ]
+        },
+        {
+            name: 'facilities',
+            createdAt: '',
+            schema: [
+                {
+                    name: 'facility1'
+                },
+                {
+                    name: 'facility2'
+                }
+            ]
+        }
+    ]
+}
